@@ -1,0 +1,47 @@
+Nth term of Fibonacci series F(n), where F(n) is a function, is calculated using the following formula -
+    F(n) = F(n-1) + F(n-2), 
+    Where, F(1) =  1, 
+           F(2) = 1
+Provided N you have to find out the Nth Fibonacci Number.
+Input Format :
+The first line of each test case contains a real number ‘N’.
+Output Format :
+For each test case, return its equivalent Fibonacci number.
+Constraints:
+1 <= N <= 10000     
+Where ‘N’ represents the number for which we have to find its equivalent Fibonacci number.
+
+Time Limit: 1 second
+
+
+--->>>
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+
+int main()
+{
+        /*
+        *  Write your code here. 
+         *  Read input as specified in the question.
+         *  Print output as specified in the question.
+        */
+        int n,t1=1,t2=1,i, s=0;
+        cin>>n;
+        if(n==1||n==2)
+        {
+                cout<<1;
+        }
+        else{
+                s=t1+t2;
+        
+        for (i = 3; i <= n; i++) {
+          t1 = t2;
+          t2 = s;
+          s=t1+t2;
+        }
+        cout<<t2;
+        }
+}
