@@ -1,0 +1,47 @@
+Write a program to calculate the total salary of a person. The user has to enter the basic salary (an integer) and the grade (an uppercase character), and depending upon which the total salary is calculated as -
+    totalSalary = basic + hra + da + allow – pf
+where :
+hra   = 20% of basic
+da    = 50% of basic
+allow = 1700 if grade = ‘A’
+allow = 1500 if grade = ‘B’
+allow = 1300 if grade = ‘C' or any other character
+pf    = 11% of basic.
+Round off the total salary and then print the integral part only.
+Note: Try finding out a function on the internet to do so
+Input format :
+Basic salary & Grade (separated by space)
+Output Format :
+Total Salary
+
+
+--->>>
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	int b,t,a;
+	float h,d,p; //a->allow, d->da,h->hra,p->pf
+	char g; //g->grade
+	cin>>b>>g;
+	if(g=='A')
+	{
+		a=1700;
+	}
+	else if(g=='B')
+	{
+		a=1500;
+	}
+	else
+	{
+		a=1300;
+	}
+	h=b*0.2;
+	d=b*0.5;
+	p=b*0.11;
+	t=round(b+h+d+a-p);
+	cout<<t<<endl;
+	return 0;
+}
